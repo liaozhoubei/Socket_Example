@@ -1,4 +1,4 @@
-# 使用说明、
+# 使用说明
 
 1. 在终端输入 make 进行编译
 2. 启动客户端时需要输入ip地址，如下：
@@ -17,3 +17,5 @@
 10. lesson10 	epoll
 11. lesson11 	epoll_et
 12. lesson12	udp
+
+Filminas3_Practico3.swf 是tcp的粘包或者漏包的演示动画
