@@ -35,6 +35,7 @@ int main(void)
     printf("wait for connect ...\n");
     addr_len = sizeof(client_addr);
     //阻塞，等待客户端链接，成功则返回新的文件描述符，用于和客户端通信
+	// 参数1是sfd; 参2传出参数, 参3传入传入参数, 全部是client端的参数
     cfd = accept(sfd, (struct sockaddr *)&client_addr, &addr_len);
 	// 打印链接的客户端地址
     printf("client IP:%s\t%d\n", 

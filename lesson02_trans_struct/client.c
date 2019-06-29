@@ -9,7 +9,7 @@
 typedef struct {
 	char name[30];
 	int age;
-}peplo;
+}People;
 int main(int argc, char *argv[])
 {
     int sfd, len;
@@ -33,14 +33,15 @@ int main(int argc, char *argv[])
 	// 连接服务端
     connect(sfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
 	// 设置一个固定的结构体
-	peplo p = {
-		"ken",
-		20
-	};
+	People p;
+	memset(&p,0,sizeof(p));
+	strcpy(p.name, "Ken stavin");
+	p.age=20;
+
     while (fgets(buf, sizeof(buf), stdin)) {
         
 		// 发送固定结构体
-		write(sfd, &p, sizeof(peplo));
+		write(sfd, &p, sizeof(People));
 		// 接受从服务端发送的数据
         len = read(sfd, buf, sizeof(buf));
 		// 将服务端数据输出到屏幕中
